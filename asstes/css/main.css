@@ -81,7 +81,7 @@
   padding: 8px;
   border-radius: 2px;
   display: none;
-  animation: fadeIn ease-in 0.5s;
+  animation: fadeIn ease-in 0.2s;
 }
 .header__qr::before {
   position: absolute;
@@ -339,10 +339,38 @@
   display: flex;
   align-items: center;
 }
-
+/* gio hang */
 .header__cart {
   width: 150px;
   text-align: center;
+  position: relative;
+}
+.header__cart-list::after {
+  content: "";
+  cursor: pointer;
+  position: absolute;
+  right: 3px;
+  top: -26px;
+  border-width: 16px 20px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+}
+.header__cart-wrap {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.header__cart-notice {
+  position: absolute;
+  top: -2px;
+  right: 48px;
+  background-color: var(--white-color);
+  color: var(--primary-color);
+  padding: 1px 6px;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  border-radius: 10px;
+  border: 2px solid #ee4d2d;
 }
 
 .header__cart-icon {
@@ -350,6 +378,46 @@
   font-size: 2.4rem;
   margin-top: 6px;
 }
+
+.header__cart-list {
+  position: absolute;
+  display: none;
+  cursor: default;
+  top: calc(100% + 4px);
+  right: 50px;
+  background-color: var(--white-color);
+  width: 400px;
+  border-radius: 2px;
+  transform-origin: 90% top;
+  box-shadow: 0 1px 3.125rem 0 rgba(0, 0, 0, 0.2);
+  animation: headerNotifyGrowth ease-in 0.25s;
+}
+
+.header__cart-wrap:hover .header__cart-list {
+  display: block;
+}
+
+.header__cart-no-cart-img {
+  width: 40%;
+  display: none;
+}
+.header__cart-list--no_cart {
+  padding: 28px 0;
+}
+.header__cart-list--no_cart .header__cart-no-cart-text,
+.header__cart-list--no_cart .header__cart-no-cart-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header__cart-no-cart-text {
+  display: none;
+  font-size: 1.4rem;
+  color: vat(--text-color);
+  margin-top: 12px;
+}
+
 .header__search-input-wrap {
   flex: 1;
   height: 100%;

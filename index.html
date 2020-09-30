@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Shop Nhà Làm</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -211,8 +211,23 @@
                 <i class="header__search-icon fas fa-search"></i>
               </button>
             </div>
+            <!-- Giỏ hàng trống -->
             <div class="header__cart">
-              <i class="header__cart-icon fas fa-shopping-cart"></i>
+              <div class="header__cart-wrap">
+                <i class="header__cart-icon fas fa-shopping-cart"></i>
+                <span class="header__cart-notice"> 3 </span>
+                <!-- Co had cart  khong sam pham: header__cart-list--no_cart them vao duoi -->
+                <div class="header__cart-list">
+                  <img
+                    src="./asstes/img/no_cart.png"
+                    alt=""
+                    class="header__cart-no-cart-img"
+                  />
+                  <span class="header__cart-no-cart-text">
+                    Chưa có sản phẩm
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

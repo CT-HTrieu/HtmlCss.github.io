@@ -33,7 +33,7 @@ html {
   flex-wrap: wrap;
 }
 
-@keyframes fedeIn {
+@keyframes fadeIn {
   form {
     opacity: 0;
   }
