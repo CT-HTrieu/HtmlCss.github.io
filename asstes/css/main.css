@@ -13,6 +13,7 @@
   padding-left: 0;
   margin: 6px 0 0 0;
   z-index: 1;
+  display: flex;
 }
 
 .header__navbar-item {
@@ -20,6 +21,71 @@
   position: relative;
   min-height: 26px;
 }
+
+.header__navbar-item-user {
+  display: flex;
+  justify-items: center;
+  position: relative;
+}
+
+.header__navbar-user-avatar {
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.header__navbar-user-name {
+  margin-left: 8px;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
+.header__navbar-item-user:hover .header__navbar-user-menu {
+  display: block;
+}
+
+.header__navbar-user-menu {
+  position: absolute;
+  padding: 8px 0;
+  top: calc(100% + 2px);
+  right: 0;
+  width: 165px;
+  background-color: var(--white-color);
+  border-radius: 2px;
+  list-style: none;
+  box-shadow: 0 1px 2px #e0e0e0;
+  display: none;
+  animation: headerNotifyGrowth ease-in 0.25s;
+}
+
+.header__navbar-user-item a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.4rem;
+  padding: 4px 16px;
+  display: block;
+}
+
+.header__navbar-user-item-logout {
+  border-top: 1px solid rgba(0, 0, 0, 0.051);
+}
+
+.header__navbar-user-item:hover {
+  background-color: #fafafafa;
+}
+
+.header__navbar-user-menu::before {
+  content: "";
+  border-width: 20px 25px;
+  border-style: solid;
+  position: absolute;
+  border-color: transparent transparent var(--white-color) transparent;
+  /* will-change: ; */
+  right: 12px;
+  top: -30px;
+}
+
 .header__navbar-item--qr-qr:hover .header__qr {
   display: block;
   /*khi hover thang cha thang con duoc hien ra*/
@@ -27,11 +93,20 @@
 
 .header__navbar-item,
 .header__navbar-item-link {
-  display: inline-block;
-  font-size: 1.4rem;
+  display: flex;
+  font-size: 1.3rem;
   color: var(--white-color);
   text-decoration: none;
   font-weight: 400;
+  padding-top: 3px;
+}
+
+.header__navbar-item-help {
+  margin-left: 3px;
+}
+
+.header__navbar-item-link-span {
+  margin-left: 3px;
 }
 
 .header__navbar-item:hover,
@@ -59,6 +134,9 @@
 .header__navbar-icon-link {
   color: var(--white-color);
   text-decoration: none;
+}
+.header__navbar-icon-link:nth-child(2) {
+  margin-left: 3px;
 }
 
 .header__navbar-icon {
@@ -118,10 +196,10 @@
   right: 0;
   border: 1px solid #d3d3d3;
   cursor: text;
-  transform-origin: 90% top;
-  /* tramfom-origin: calc(100%-20px) top */
+  transform-origin: calc(100% - 34px) top;
   animation: headerNotifyGrowth ease-in 0.25s;
   display: none;
+  border-radius: 2px;
 }
 .header__notify::before {
   content: "";
@@ -325,6 +403,10 @@
   align-items: center;
   margin: 0 8px;
 }
+.header__logo-link {
+  text-decoration: none;
+  color: transparent;
+}
 .header__logo {
   width: 200px;
 }
@@ -486,7 +568,7 @@
 .header__search-option {
   position: absolute;
   right: 0;
-  top: 100%;
+  top: calc(100% - 1px);
   width: 130px;
   list-style: none;
   box-shadow: 0 1px 2px #e0e0e0;
